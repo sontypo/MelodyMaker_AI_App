@@ -145,6 +145,8 @@ MelodyMaker_AI_App/
 - The model will analyze audio features and synthesize new tracks.
 - More details and technical documentation will be added here.
 
+Our system currently supports **hybrid music generation**. Users can select from available techniques to generate genre-specific audio based on their needs or preferences.
+
 ### 🎛️ 1. RAVE (Realtime Audio Variational autoEncoder)
 
 **RAVE** is a neural audio synthesizer capable of generating raw audio directly from latent noise vectors. We trained a custom RAVE model on the **GTZAN dataset** to capture genre-specific audio characteristics.
