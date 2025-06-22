@@ -179,7 +179,7 @@ Our system currently supports **hybrid music generation**. Users can select from
 - [GTZAN Genre Collection Dataset](http://marsyas.info/downloads/datasets.html)
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [acids-ircam RAVE](https://github.com/acids-ircam/RAVE}
+- [acids-ircam RAVE](https://github.com/acids-ircam/RAVE)
 
 ---
 
