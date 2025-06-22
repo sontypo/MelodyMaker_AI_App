@@ -10,20 +10,20 @@
 
 ## Table of Contents
 
-- [Dataset](#dataset)
-- [Features](#features)
-- [Live Demo](#live-demo)
-- [Installation & Usage](#installation--usage)
+- [Dataset](#📁-dataset)
+- [Features](#🚀-features)
+- [Live Demo](#🖥️-live-demo)
+- [Installation & Usage](#🛠️-installation--usage)
   - [Clone the Repository](#clone-the-repository)
   - [Prepare the Dataset](#prepare-the-dataset)
   - [Install Dependencies](#install-dependencies)
   - [Run the Application](#run-the-application)
-- [Project Structure](#project-structure)
-- [How It Works](#how-it-works)
-- [Music Generation Model (Coming Soon)](#music-generation-model-coming-soon)
-- [References](#references)
-- [Contributors](#contributors)
-- [Notes](#notes)
+- [Project Structure](#🏗️-project-structure)
+- [How It Works](#⚙️-how-it-works)
+- [Music Generation Model (Coming Soon)](#🧠-music-generation-model-coming-soon)
+- [References](#📚-references)
+- [Contributors](#👥-contributors)
+- [Notes](#📢-notes)
 
 ---
 
