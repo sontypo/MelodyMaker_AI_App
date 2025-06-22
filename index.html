@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Music Generation App</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <!-- Welcome Screen with Swipeable Carousel -->
+        <div
+            id="welcome-screen"
+            class="screen active flex flex-col items-center justify-between min-h-screen p-6 pb-20"
+        >
+            <div class="text-center mt-16">
+                <h1 class="text-4xl font-bold mb-2">MelodyMaker AI</h1>
+                <p class="text-xl text-gray-300">Create unique music with AI</p>
+            </div>
+
+            <div
+                class="w-full flex-grow flex flex-col items-center justify-center"
+            >
+                <h2 class="text-xl font-medium mb-6 self-start"></h2>
+
+                <div class="carousel-container w-full">
+                    <div
+                        class="carousel-track"
+                        style="transform: translateX(-1150px)"
+                    >
+                        <!-- Album Cards -->
+                        <div
+                            class="album-card"
+                            data-index="0"
+                            style="
+                                width: 666px;
+                                transform: scale(0.8);
+                                opacity: 0.7;
+                            "
+                        >
+                            <audio class="album-audio" preload="metadata">
+                                <source
+                                    src="genres/blues/blues.00000.au"
+                                    type="audio/basic"
+                                />
+                            </audio>
+                            <div
+                                class="album-image relative overflow-hidden rounded-xl"
+                            >
+                                <div
+                                    class="bg-gradient-to-br from-pink-500 to-purple-700 aspect-square flex items-center justify-center"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-16 w-16 text-white opacity-80"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div class="play-indicator">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-10 w-10 text-white"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                                        ></path>
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div class="album-info">
+                                    <h3 class="font-medium text-lg">Blues</h3>
+                                    <p class="text-sm text-gray-300">
+                                        Demo • 0:30
+                                    </p>
+                                    <div class="visualizer mt-2">
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.1s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.2s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.3s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.4s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.5s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.3s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.2s"
+                                        ></div>
+                                    </div>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="album-card"
+                            data-index="1"
+                            style="
+                                width: 666px;
+                                transform: scale(0.8);
+                                opacity: 0.7;
+                            "
+                        >
+                            <audio class="album-audio" preload="metadata">
+                                <source
+                                    src="genres/classical/classical.00000.au"
+                                    type="audio/basic"
+                                />
+                            </audio>
+                            <div
+                                class="album-image relative overflow-hidden rounded-xl"
+                            >
+                                <div
+                                    class="bg-gradient-to-br from-blue-500 to-indigo-700 aspect-square flex items-center justify-center"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-16 w-16 text-white opacity-80"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div class="play-indicator">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-10 w-10 text-white"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                                        ></path>
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div class="album-info">
+                                    <h3 class="font-medium text-lg">
+                                        Classical
+                                    </h3>
+                                    <p class="text-sm text-gray-300">
+                                        Demo • 0:30
+                                    </p>
+                                    <div class="visualizer mt-2">
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.1s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.2s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.3s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.4s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.5s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.3s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.2s"
+                                        ></div>
+                                    </div>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="album-card active"
+                            data-index="2"
+                            style="
+                                width: 666px;
+                                transform: scale(1);
+                                opacity: 1;
+                            "
+                        >
+                            <audio class="album-audio" preload="metadata">
+                                <source
+                                    src="genres/country/country.00000.au"
+                                    type="audio/basic"
+                                />
+                            </audio>
+                            <div
+                                class="album-image relative overflow-hidden rounded-xl"
+                            >
+                                <div
+                                    class="bg-gradient-to-br from-purple-500 to-indigo-800 aspect-square flex items-center justify-center"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-16 w-16 text-white opacity-80"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div class="play-indicator">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-10 w-10 text-white"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                                        ></path>
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div class="album-info">
+                                    <h3 class="font-medium text-lg">Country</h3>
+                                    <p class="text-sm text-gray-300">
+                                        Demo • 0:30
+                                    </p>
+                                    <div class="visualizer mt-2">
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.1s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.2s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.3s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.4s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.5s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.3s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.2s"
+                                        ></div>
+                                    </div>
+                                    <div class="progress-bar-container">
+                                        <div
+                                            class="progress-bar"
+                                            style="
+                                                width: 100%;
+                                                transition: width 20s linear;
+                                            "
+                                        ></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="album-card"
+                            data-index="3"
+                            style="
+                                width: 666px;
+                                transform: scale(0.8);
+                                opacity: 0.7;
+                            "
+                        >
+                            <audio class="album-audio" preload="metadata">
+                                <source
+                                    src="genres/hiphop/hiphop.00000.au"
+                                    type="audio/basic"
+                                />
+                            </audio>
+                            <div
+                                class="album-image relative overflow-hidden rounded-xl"
+                            >
+                                <div
+                                    class="bg-gradient-to-br from-green-500 to-teal-700 aspect-square flex items-center justify-center"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-16 w-16 text-white opacity-80"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div class="play-indicator">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-10 w-10 text-white"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                                        ></path>
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div class="album-info">
+                                    <h3 class="font-medium text-lg">Hip Hop</h3>
+                                    <p class="text-sm text-gray-300">
+                                        Demo • 0:30
+                                    </p>
+                                    <div class="visualizer mt-2">
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.1s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.2s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.3s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.4s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.5s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.3s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.2s"
+                                        ></div>
+                                    </div>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="album-card"
+                            data-index="4"
+                            style="
+                                width: 666px;
+                                transform: scale(0.8);
+                                opacity: 0.7;
+                            "
+                        >
+                            <audio class="album-audio" preload="metadata">
+                                <source
+                                    src="genres/disco/disco.00000.au"
+                                    type="audio/basic"
+                                />
+                            </audio>
+                            <div
+                                class="album-image relative overflow-hidden rounded-xl"
+                            >
+                                <div
+                                    class="bg-gradient-to-br from-red-500 to-orange-700 aspect-square flex items-center justify-center"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-16 w-16 text-white opacity-80"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div class="play-indicator">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-10 w-10 text-white"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                                        ></path>
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div class="album-info">
+                                    <h3 class="font-medium text-lg">Disco</h3>
+                                    <p class="text-sm text-gray-300">
+                                        Demo • 0:30
+                                    </p>
+                                    <div class="visualizer mt-2">
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.1s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.2s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.3s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.4s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.5s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.3s"
+                                        ></div>
+                                        <div
+                                            class="visualizer-bar"
+                                            style="animation-delay: 0.2s"
+                                        ></div>
+                                    </div>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Arrows -->
+                    <div class="navigation-arrow prev">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M15 19l-7-7 7-7"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div class="navigation-arrow next">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 5l7 7-7 7"
+                            ></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <button
+                id="start-button"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 mt-8"
+            >
+                Start Creating
+            </button>
+        </div>
+
+        <!-- Customization Screen -->
+        <div
+            id="customize-screen"
+            class="screen flex flex-col min-h-screen p-6"
+        >
+            <div class="mb-6">
+                <h1 class="text-3xl font-bold">Customize Your Track</h1>
+                <p class="text-gray-300">
+                    Select options to generate your perfect music
+                </p>
+            </div>
+
+            <div class="flex flex-grow">
+                <!-- Categories Column -->
+                <div class="w-1/3 pr-4">
+                    <h2 class="text-xl font-medium mb-4">Categories</h2>
+                    <div class="space-y-3">
+                        <div
+                            class="category-item active p-4 rounded-lg"
+                            data-category="instrument"
+                        >
+                            <h3 class="text-lg font-medium">Instrument</h3>
+                            <p class="text-sm text-gray-300">
+                                Choose main instruments
+                            </p>
+                        </div>
+
+                        <div
+                            class="category-item p-4 rounded-lg"
+                            data-category="genre"
+                        >
+                            <h3 class="text-lg font-medium">Genre</h3>
+                            <p class="text-sm text-gray-300">
+                                Select music style
+                            </p>
+                        </div>
+
+                        <div
+                            class="category-item p-4 rounded-lg"
+                            data-category="tempo"
+                        >
+                            <h3 class="text-lg font-medium">Tempo</h3>
+                            <p class="text-sm text-gray-300">Set the speed</p>
+                        </div>
+
+                        <div
+                            class="category-item p-4 rounded-lg"
+                            data-category="length"
+                        >
+                            <h3 class="text-lg font-medium">Length</h3>
+                            <p class="text-sm text-gray-300">
+                                Duration of track
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Options Column -->
+                <div class="w-2/3 pl-4">
+                    <div class="bg-white bg-opacity-5 rounded-xl p-6 h-full">
+                        <!-- Instrument Options (Default Visible) -->
+                        <div
+                            class="options-container active"
+                            id="instrument-options"
+                        >
+                            <h2 class="text-xl font-medium mb-4">
+                                Select Instruments
+                            </h2>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎹</span>
+                                        </div>
+                                        <span>Piano</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎸</span>
+                                        </div>
+                                        <span>Guitar</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎻</span>
+                                        </div>
+                                        <span>Strings</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-pink-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🥁</span>
+                                        </div>
+                                        <span>Drums</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎷</span>
+                                        </div>
+                                        <span>Saxophone</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎺</span>
+                                        </div>
+                                        <span>Trumpet</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Genre Options (Hidden by Default) -->
+                        <div
+                            class="options-container hidden"
+                            id="genre-options"
+                        >
+                            <h2 class="text-xl font-medium mb-4">
+                                Select Genre
+                            </h2>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎵</span>
+                                        </div>
+                                        <span>Blues</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎵</span>
+                                        </div>
+                                        <span>Classical</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎵</span>
+                                        </div>
+                                        <span>Country</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎵</span>
+                                        </div>
+                                        <span>Disco</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-lime-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎵</span>
+                                        </div>
+                                        <span>HipHop</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎵</span>
+                                        </div>
+                                        <span>Jazz</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎵</span>
+                                        </div>
+                                        <span>Metal</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎵</span>
+                                        </div>
+                                        <span>Pop</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎵</span>
+                                        </div>
+                                        <span>Reggae</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-sky-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🎵</span>
+                                        </div>
+                                        <span>Rock</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tempo Options (Hidden by Default) -->
+                        <div
+                            class="options-container hidden"
+                            id="tempo-options"
+                        >
+                            <h2 class="text-xl font-medium mb-4">
+                                Select Tempo
+                            </h2>
+                            <div class="space-y-4">
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🐢</span>
+                                        </div>
+                                        <span>Slow (60-80 BPM)</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🚶</span>
+                                        </div>
+                                        <span>Medium (90-120 BPM)</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">🏃</span>
+                                        </div>
+                                        <span>Fast (130-160 BPM)</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="option-item p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">⚡</span>
+                                        </div>
+                                        <span>Very Fast (170+ BPM)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Length Options (Hidden by Default) -->
+                        <div
+                            class="options-container hidden"
+                            id="length-options"
+                        >
+                            <h2 class="text-xl font-medium mb-4">
+                                Select Length
+                            </h2>
+                            <div class="space-y-4">
+                                <div
+                                    class="option-item selected p-3 rounded-lg border border-gray-700"
+                                >
+                                    <div class="flex items-center">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center mr-3"
+                                        >
+                                            <span class="text-xl">⏱️</span>
+                                        </div>
+                                        <span>Demo (30 seconds)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-6">
+                <button
+                    id="back-to-welcome"
+                    class="bg-gray-700 hover:bg-gray-600 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300"
+                >
+                    Back
+                </button>
+
+                <button
+                    id="generate-button"
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                >
+                    Generate Music
+                </button>
+            </div>
+        </div>
+
+        <!-- Player Screen -->
+        <div id="player-screen" class="screen flex flex-col min-h-screen p-6">
+            <div class="mb-6">
+                <h1 class="text-3xl font-bold">Your Generated Track</h1>
+                <p class="text-gray-300">
+                    Strings-based Ambient Flow in Medium Tempo
+                </p>
+            </div>
+
+            <div class="flex-grow flex flex-col items-center justify-center">
+                <div
+                    class="w-full max-w-2xl bg-white bg-opacity-5 rounded-xl p-6"
+                >
+                    <!-- Album Art and Visualizer -->
+                    <div
+                        class="relative h-64 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-lg mb-6 overflow-hidden flex items-center justify-center"
+                    >
+                        <div class="visualizer-large">
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0.1s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0.2s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0.3s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0.4s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0.5s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0.6s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0.7s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0.8s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0.9s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 1s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0.7s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0.4s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0.3s"
+                            ></div>
+                            <div
+                                class="visualizer-bar-large"
+                                style="animation-delay: 0.5s"
+                            ></div>
+                        </div>
+
+                        <div class="z-10 text-center">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-20 w-20 text-white opacity-80"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                                ></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Track Info -->
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold">Enjoy the music</h2>
+                        <p class="text-gray-400">
+                            Generated with MelodyMaker AI
+                        </p>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="mb-4">
+                        <div class="h-1 w-full bg-gray-700 rounded-full">
+                            <div
+                                class="h-1 bg-indigo-500 rounded-full w-1/3"
+                                id="progress-bar"
+                            ></div>
+                        </div>
+                        <div
+                            class="flex justify-between text-sm text-gray-400 mt-1"
+                        >
+                            <span>1:05</span>
+                            <span>3:24</span>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="flex items-center justify-center space-x-6">
+                        <button class="text-gray-300 hover:text-white">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-8 w-8"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.333 4zM4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z"
+                                ></path>
+                            </svg>
+                        </button>
+
+                        <button
+                            class="bg-white rounded-full p-3 text-indigo-900 hover:bg-gray-200 transition-all"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-8 w-8"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                ></path>
+                            </svg>
+                        </button>
+
+                        <button class="text-gray-300 hover:text-white">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-8 w-8"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z"
+                                ></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-6">
+                <button
+                    id="back-to-customize"
+                    class="bg-gray-700 hover:bg-gray-600 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300"
+                >
+                    Back
+                </button>
+
+                <div class="relative">
+                    <button
+                        id="download-button"
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300 flex items-center"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 mr-2"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                            ></path>
+                        </svg>
+                        Download
+                    </button>
+
+                    <div
+                        id="download-menu"
+                        class="download-menu absolute right-0 bottom-full mb-2 w-48 bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+                    >
+                        <div class="p-2">
+                            <button
+                                class="w-full text-left p-2 hover:bg-gray-700 rounded flex items-center"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 mr-2 text-blue-400"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                                    ></path>
+                                </svg>
+                                MP3 Format
+                            </button>
+                            <button
+                                class="w-full text-left p-2 hover:bg-gray-700 rounded flex items-center"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 mr-2 text-green-400"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                                    ></path>
+                                </svg>
+                                WAV Format
+                            </button>
+                            <button
+                                class="w-full text-left p-2 hover:bg-gray-700 rounded flex items-center"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 mr-2 text-yellow-400"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                                    ></path>
+                                </svg>
+                                MIDI Format
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

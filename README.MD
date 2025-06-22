@@ -1,0 +1,174 @@
+# Music Genre Generation System: MelodyMaker AI
+
+## 🎵 Project Overview
+
+**MelodyMaker AI** is an AI-powered web application designed to generate and recommend music tracks in specific genres. The system aims to streamline music creation and enhance recommendation engines by leveraging machine learning for genre classification and music generation.
+
+> **Objective:**  
+> Modern music streaming services rely on efficient content creation and recommendation. This project seeks to develop a machine learning system that can **automatically generate music in user-selected genres**. By analyzing audio features, the system will ensure generated tracks fit genres such as classical, rock, pop, and more.
+
+---
+
+## Table of Contents
+
+- [Dataset](#dataset)
+- [Features](#features)
+- [Live Demo](#live-demo)
+- [Installation & Usage](#installation--usage)
+  - [Clone the Repository](#clone-the-repository)
+  - [Prepare the Dataset](#prepare-the-dataset)
+  - [Install Dependencies](#install-dependencies)
+  - [Run the Application](#run-the-application)
+- [Project Structure](#project-structure)
+- [How It Works](#how-it-works)
+- [Music Generation Model (Coming Soon)](#music-generation-model-coming-soon)
+- [References](#references)
+- [Contributors](#contributors)
+- [Notes](#notes)
+
+---
+
+## 📁 Dataset
+
+- **GTZAN Genre Collection**
+  - 1,000 music clips (each 30 seconds)
+  - 10 genres: `blues`, `classical`, `country`, `disco`, `hiphop`, `jazz`, `metal`, `pop`, `reggae`, `rock`
+  - Used for both training and demo purposes
+
+---
+
+## 🚀 Features
+
+- **Interactive Web Interface:**  
+  Modern, responsive UI for music selection, customization, and playback.
+
+- **Genre-based Music Generation:**  
+  (Coming soon) Generate new music tracks in the selected genre using AI.
+
+- **Audio Player & Visualizer:**  
+  Listen to generated or demo tracks with real-time visual feedback.
+
+- **Download Options:**  
+  Download generated music in multiple formats (MP3, WAV, MIDI).
+
+---
+
+## 🖥️ Live Demo
+
+> _A live demo is not available yet. Please run locally as described below._
+
+---
+
+## 🛠️ Installation & Usage
+
+### 1. **Clone the Repository**
+
+```bash
+git clone <your-repo-url>
+cd Music_Generator_Web
+```
+
+### 2. **Prepare the Dataset**
+
+- Ensure the `genres` folder exists in the project root, containing subfolders for each genre with `.au` files (from the GTZAN dataset).
+
+### 3. **Install Dependencies**
+
+#### **All Platforms**
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. **Run the Application**
+
+#### **Linux / macOS**
+
+```sh
+chmod +x run.sh
+./run.sh
+```
+
+#### **Windows**
+
+Double-click `run.bat` or run in Command Prompt:
+
+```bat
+run.bat
+```
+
+- The browser will open automatically at [http://localhost:8080/index.html](http://localhost:8080/index.html).
+
+---
+
+## 🏗️ Project Structure
+
+```
+Music_Generator_Web/
+│
+├── app.py                # Flask backend (API for music generation)
+├── requirements.txt      # Python dependencies
+├── run.sh                # Startup script for Linux/macOS
+├── run.bat               # Startup script for Windows
+│
+├── index.html            # Main frontend page
+├── script.js             # Frontend logic
+├── styles.css            # Custom styles
+│
+└── genres/               # GTZAN dataset (audio files)
+    ├── blues/
+    ├── classical/
+    └── ...
+```
+
+---
+
+## ⚙️ How It Works
+
+1. **Frontend:**  
+   - Users select genre, instruments, tempo, and length.
+   - Requests are sent to the backend to generate music.
+
+2. **Backend:**  
+   - Receives parameters and (currently) returns a random demo track from the dataset.
+   - Will be updated to generate music using a machine learning model.
+
+3. **Playback & Download:**  
+   - Users can listen to and download the generated music.
+
+---
+
+## 🧠 Music Generation Model (Coming Soon)
+
+> **This section will be updated as the model is developed.**
+
+- The backend will integrate a machine learning model to generate music in the selected genre.
+- The model will analyze audio features and synthesize new tracks.
+- More details and technical documentation will be added here.
+
+---
+
+## 📚 References
+
+- [GTZAN Genre Collection Dataset](http://marsyas.info/downloads/datasets.html)
+- [Flask Documentation](https://flask.palletsprojects.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+---
+
+## 👥 Contributors
+This project was developed and carried out by a group of four students as the final project for the course 'Machine Learning in Engineering Science', under the guidance of Professor Chi-Hua Yu.
+
+- Hong-Son Nguyen
+-
+-
+-
+
+---
+
+## 📢 Notes
+
+- This project is under active development.
+- For questions or contributions, please open an issue or pull request.
+
+---
