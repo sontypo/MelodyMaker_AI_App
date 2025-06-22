@@ -4,8 +4,7 @@
 
 **MelodyMaker AI** is an AI-powered web application designed to generate and recommend music tracks in specific genres. The system aims to streamline music creation and enhance recommendation engines by leveraging machine learning for genre classification and music generation.
 
-> **Objective:**  
-> Modern music streaming services rely on efficient content creation and recommendation. This project seeks to develop a machine learning system that can **automatically generate music in user-selected genres**. By analyzing audio features, the system will ensure generated tracks fit genres such as classical, rock, pop, and more.
+> **Objective:** Modern music streaming services rely on efficient content creation and recommendation. This project seeks to develop a machine learning system that can **automatically generate music in user-selected genres**. By analyzing audio features, the system will ensure generated tracks fit genres such as classical, rock, pop, and more.
 
 ---
 
@@ -64,8 +63,8 @@
 ### 1. **Clone the Repository**
 
 ```bash
-git clone <your-repo-url>
-cd Music_Generator_Web
+git clone https://github.com/sontypo/MelodyMaker_AI_App.git
+cd MelodyMaker_AI_App
 ```
 
 ### 2. **Prepare the Dataset**
@@ -104,7 +103,7 @@ run.bat
 ## 🏗️ Project Structure
 
 ```
-Music_Generator_Web/
+MelodyMaker_AI_App/
 │
 ├── app.py                # Flask backend (API for music generation)
 ├── requirements.txt      # Python dependencies
