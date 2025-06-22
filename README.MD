@@ -158,8 +158,8 @@ MelodyMaker_AI_App/
 ## 👥 Contributors
 This project was developed and carried out by a group of four students as the final project for the course 'Machine Learning in Engineering Science', under the guidance of Professor Chi-Hua Yu.
 
-- Hong-Son Nguyen
--
+- Hong-Son Nguyen (阮洪山) <email: n16137037@gs.ncku.edu.tw>
+- Yu-Chen Ko (柯妤蓁) <email: e14094154@gs.ncku.edu.tw>
 -
 -
 
