@@ -141,7 +141,7 @@ document
 //         animateProgressBar();
 //     });
 
-window.API_URL = "http://127.0.0.1:8000";
+window.API_URL = "http://127.0.0.1:8080";
 
 document
     .getElementById("generate-button")
