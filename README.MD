@@ -145,6 +145,30 @@ MelodyMaker_AI_App/
 - The model will analyze audio features and synthesize new tracks.
 - More details and technical documentation will be added here.
 
+### 🎛️ 1. RAVE (Realtime Audio Variational autoEncoder)
+
+**RAVE** is a neural audio synthesizer capable of generating raw audio directly from latent noise vectors. We trained a custom RAVE model on the **GTZAN dataset** to capture genre-specific audio characteristics.
+
+#### 🛠️ RAVE Pipeline:
+
+- Conversion of `.au` files to `.wav` format  
+- Preprocessing, training, and export using RAVE tools  
+- Latent noise sampling to synthesize new music clips  
+
+> For complete training scripts and configuration, see the [`train_rave/`](./train_rave/) folder in this repository.
+
+#### ⚠️ Challenges:
+
+- **Presence of noise** in outputs, especially during early training phases  
+- **Long training times** required for each genre  
+- Performs **better in genres without vocals**, such as *classical*  
+- Due to time constraints, RAVE has only been trained on:
+  - `classical`
+  - `blues`
+  - `country`
+  - `pop`
+
+>  Note: The RAVE option may not always yield optimal results across all genres. Therefore, we provide an alternative generation method for improved quality.
 ---
 
 ## 📚 References
