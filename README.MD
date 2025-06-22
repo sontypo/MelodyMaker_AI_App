@@ -169,6 +169,7 @@ Our system currently supports **hybrid music generation**. Users can select from
   - `blues`
   - `country`
   - `pop`
+  - `reggae`
 
 >  Note: The RAVE option may not always yield optimal results across all genres. Therefore, we provide an alternative generation method for improved quality.
 ---
