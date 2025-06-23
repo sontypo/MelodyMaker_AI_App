@@ -47,6 +47,11 @@ function startProgressBar(card) {
     }
 }
 
+function getSelectedGenerateMode() {
+    const modeInput = document.querySelector('input[name="generate-mode"]:checked');
+    return modeInput ? parseInt(modeInput.value) : 2; // default to 2
+}
+
 // Event listeners for navigation buttons
 prevButton.addEventListener("click", () => {
     if (currentIndex > 0) {
@@ -152,6 +157,7 @@ document
             instruments: getSelectedOption("instrument-options"),
             tempo: getSelectedOption("tempo-options"),
             length: getSelectedOption("length-options"),
+            generate_mode: getSelectedGenerateMode(), // <-- NEW
         };
 
         // 檢查是否有選擇

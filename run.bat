@@ -7,10 +7,10 @@ REM Wait for backend to start
 timeout /t 2 >nul
 
 REM Start frontend server
-start python -m http.server 8080
+start python -m http.server 8090
 
 REM Open browser
-start http://localhost:8080/index.html
+start http://localhost:8090/index.html
 
 REM Instructions to stop servers
 echo.

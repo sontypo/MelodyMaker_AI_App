@@ -20,7 +20,7 @@
   - [Run the Application](#run-the-application)
 - [Project Structure](#project-structure)
 - [How It Works](#how-it-works)
-- [Music Generation Model (Coming Soon)](#music-generation-model-coming-soon)
+- [Music Generation Model (Updating...)](#music-generation-model)
 - [References](#references)
 - [Contributors](#contributors)
 - [Notes](#notes)
@@ -96,7 +96,7 @@ Double-click `run.bat` or run in Command Prompt:
 run.bat
 ```
 
-- The browser will open automatically at [http://localhost:8080/index.html](http://localhost:8080/index.html).
+- The browser will open automatically at [http://localhost:8090/index.html](http://localhost:8090/index.html).
 
 ---
 
@@ -125,15 +125,22 @@ MelodyMaker_AI_App/
 ## ⚙️ How It Works
 
 1. **Frontend:**  
-   - Users select genre, instruments, tempo, and length.
-   - Requests are sent to the backend to generate music.
+   - Users select **genre**, **instruments**, **tempo**, and **length** for the music to be generated.
+   - Users can now also select the **Generation Mode** (Original Dataset, RAVE Model, or Existing API Model) via radio buttons on the customization screen.
+   - All selected options are sent to the backend via a POST request when the user clicks "**Generate Music**".
 
 2. **Backend:**  
-   - Receives parameters and (currently) returns a random demo track from the dataset.
-   - Will be updated to generate music using a machine learning model.
+   - Receives all parameters, including `generate_mode`, from the frontend.
+   - Depending on the selected `generate_mode`:
+     - **Mode 0:** Returns a random demo track from the original dataset.
+     - **Mode 1:** Generates music using the RAVE model and returns the result.
+     - **Mode 2:** Generates music using the API model and returns the result.
+   - The backend streams the generated or selected audio file back to the frontend.
 
 3. **Playback & Download:**  
-   - Users can listen to and download the generated music.
+   - The frontend displays a player for the generated track.
+   - Users can listen to the generated music and download it in multiple formats (MP3, WAV, MIDI).
+   - The UI provides real-time progress, visual feedback, and download options.
 
 ---
 
@@ -226,7 +233,7 @@ This project was developed and carried out by a group of four students as the fi
 - Hong-Son Nguyen (阮洪山) [✉](mailto:n16137037@gs.ncku.edu.tw)
 - Yu-Chen Ko (柯妤蓁) [✉](mailto:e14094154@gs.ncku.edu.tw)
 - Yong-Jhih Yang (楊詠智) [✉](mailto:n16134623@gs.ncku.edu.tw)
-- Chia-Cheng Hsu (徐嘉呈)] [✉](mailto:n48131504@gs.ncku.edu.tw)
+- Chia-Cheng Hsu (徐嘉呈) [✉](mailto:n48131504@gs.ncku.edu.tw)
 
 ---
 

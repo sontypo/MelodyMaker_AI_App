@@ -11,13 +11,13 @@ sleep 2
 
 # Open browser
 if command -v xdg-open > /dev/null; then
-    xdg-open http://localhost:8080/index.html
+    xdg-open http://localhost:8090/index.html
 elif command -v open > /dev/null; then
-    open http://localhost:8080/index.html
+    open http://localhost:8090/index.html
 fi
 
 # Start frontend server
-python3 -m http.server 8080
+python3 -m http.server 8090
 
 # When frontend server stops, kill backend
 kill $BACKEND_PID

@@ -15,43 +15,74 @@ from pydub import AudioSegment
 app = Flask(__name__)
 CORS(app)  
 
+# @app.route('/generate', methods=['POST'])
+# def generate_music():
+#     """測試版本"""
+#     try:
+#         # 獲取請求數據
+#         data = request.json
+#         print(f"Received request: {data}")
+        
+#         # 提取參數
+#         genre = data.get('genre', 'Pop')
+#         # instruments = data.get('instruments', 'Piano')
+#         # tempo = data.get('tempo', 'Medium')
+#         # length = data.get('length', '30 seconds')
+        
+#         print(genre)
+        
+#         if GENERATE_MODE == 0:
+#             selected_file = select_audio_file_mode_0(genre)
+#         elif GENERATE_MODE == 1:
+#             selected_file = select_audio_file_mode_1(genre)
+#         elif GENERATE_MODE == 2:
+#             selected_file = select_audio_file_mode_2(genre)
+
+#         # 回傳檔案
+#         return send_file(
+#             selected_file,
+#             mimetype='audio/basic',  # .au 檔案的 MIME type
+#             as_attachment=True,
+#             download_name=f"generated_{genre.lower()}_{int(time.time())}.au"
+#         )
+        
+#     except Exception as e:
+#         print(f"Error: {str(e)}")
+#         return jsonify({
+#             'status': 'error',
+#             'message': str(e)
+#         }), 500
+        
 @app.route('/generate', methods=['POST'])
 def generate_music():
     """測試版本"""
     try:
-        # 獲取請求數據
         data = request.json
         print(f"Received request: {data}")
-        
-        # 提取參數
-        genre = data.get('genre', 'Pop')
-        # instruments = data.get('instruments', 'Piano')
-        # tempo = data.get('tempo', 'Medium')
-        # length = data.get('length', '30 seconds')
-        
-        print(genre)
-        
-        if GENERATE_MODE == 0:
-            selected_file = select_audio_file_mode_0(genre)
-        elif GENERATE_MODE == 1:
-            selected_file = select_audio_file_mode_1(genre)
-        elif GENERATE_MODE == 2:
-            selected_file = select_audio_file_mode_2(genre)
 
-        # 回傳檔案
+        genre = data.get('genre', 'Pop')
+        generate_mode = int(data.get('generate_mode', GENERATE_MODE))  # <-- use mode from request
+
+        print(f"Genre: {genre}, Generate Mode: {generate_mode}")
+
+        if generate_mode == 0:
+            selected_file = select_audio_file_mode_0(genre)
+        elif generate_mode == 1:
+            selected_file = select_audio_file_mode_1(genre)
+        elif generate_mode == 2:
+            selected_file = select_audio_file_mode_2(genre)
+        else:
+            return jsonify({'status': 'error', 'message': 'Invalid generate_mode'}), 400
+
         return send_file(
             selected_file,
-            mimetype='audio/basic',  # .au 檔案的 MIME type
+            mimetype='audio/basic',
             as_attachment=True,
             download_name=f"generated_{genre.lower()}_{int(time.time())}.au"
         )
-        
     except Exception as e:
         print(f"Error: {str(e)}")
-        return jsonify({
-            'status': 'error',
-            'message': str(e)
-        }), 500
+        return jsonify({'status': 'error', 'message': str(e)}), 500
         
         
 def select_audio_file_mode_0(genre, GENRES_FOLDER='genres'):

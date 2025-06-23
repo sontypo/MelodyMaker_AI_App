@@ -978,6 +978,25 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- ADDED THIS FIELD TO THE CUSTOMIZATION SCREEN: enable multiple generation modes -->
+            <div class="mb-6">
+                <h2 class="text-lg font-medium mb-2">Generation Mode</h2>
+                <div class="flex space-x-6">
+                    <label class="flex items-center">
+                        <input type="radio" name="generate-mode" value="0" checked class="mr-2" />
+                        Original Dataset
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="generate-mode" value="1" class="mr-2" />
+                        RAVE Model
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="generate-mode" value="2" class="mr-2" />
+                        Api Generated
+                    </label>
+                </div>
+            </div>
 
             <div class="flex justify-between mt-6">
                 <button
