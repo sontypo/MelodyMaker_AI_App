@@ -56,7 +56,7 @@
 
 ## 🖥️ Live Demo
 
-**Demo Video** [link](https://youtu.be/lpi_6QMFxQo)
+**Demo Video**: [Youtube 🟥▶️](https://youtu.be/lpi_6QMFxQo)
 
 ---
 
@@ -107,19 +107,30 @@ run.bat
 ```
 MelodyMaker_AI_App/
 │
-├── app.py                # Flask backend (API for music generation)
-├── requirements.txt      # Python dependencies
-├── run.sh                # Startup script for Linux/macOS
-├── run.bat               # Startup script for Windows
+├── app.py                  # Flask backend (API for music generation)
+├── requirements.txt        # Python dependencies
+├── run.sh                  # Startup script for Linux/macOS
+├── run.bat                 # Startup script for Windows
 │
-├── index.html            # Main frontend page
-├── script.js             # Frontend logic
-├── styles.css            # Custom styles
+├── index.html              # Main frontend page
+├── script.js               # Frontend logic
+├── styles.css              # Custom styles
 │
-└── genres/               # GTZAN dataset (audio files)
-    ├── blues/
-    ├── classical/
-    └── ...
+├── genres/                 # GTZAN dataset (audio files, not included)
+│   ├── blues/
+│   ├── classical/
+│   └── ...
+│
+├── train_rave/             # RAVE model training scripts and configs
+├── diffusion_model/        # Diffusion/DDIM model code, notebooks, and generated samples
+│   ├── ddim_pytorch.ipynb
+│   └── generated/
+│
+├── melgan_model/           # MEL-GAN model code and notebook
+│   └── MEL-GAN.ipynb
+│
+├── app_screenshot.png      # App screenshot for README
+└── README.MD 
 ```
 
 ---
