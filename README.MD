@@ -137,7 +137,7 @@ MelodyMaker_AI_App/
 
 ---
 
-## 🧠 Music Generation Model (Coming Soon)
+## 🧠 Music Generation Model (Updating...)
 
 > **This section will be updated as the model is developed.**
 
@@ -147,7 +147,7 @@ MelodyMaker_AI_App/
 
 Our system currently supports **hybrid music generation**. Users can select from available techniques to generate genre-specific audio based on their needs or preferences.
 
-### 🎛️ 1. RAVE (Realtime Audio Variational autoEncoder)
+### 1. RAVE (Real-time Audio Variational autoEncoder)
 
 **RAVE** is a neural audio synthesizer capable of generating raw audio directly from latent noise vectors. We trained a custom RAVE model on the **GTZAN dataset** to capture genre-specific audio characteristics.
 
@@ -172,6 +172,41 @@ Our system currently supports **hybrid music generation**. Users can select from
   - `reggae`
 
 >  Note: The RAVE option may not always yield optimal results across all genres. Therefore, we provide an alternative generation method for improved quality.
+
+### 2. Denoising Diffusion Implicit Model (DDIM)
+
+**Diffusion-based generative models** are a recent and powerful approach for raw audio synthesis. Our implementation leverages a U-Net architecture with self-attention and sinusoidal embeddings, trained to denoise [Modified Discrete Cosine Transform (MDCT)](https://www.tensorflow.org/api_docs/python/tf/signal/mdct) representations of audio.
+
+#### 🛠️ DDIM Pipeline:
+
+- **Preprocessing:**  
+  - Convert `.au` files to MDCT spectrograms (using DCT-IV).
+  - Normalize and segment audio for training.
+- **Model Architecture:**  
+  - U-Net with residual blocks and self-attention layers.
+  - Sinusoidal embeddings for diffusion time conditioning.
+- **Training:**  
+  - Trained to reverse a forward diffusion process (adding noise to audio).
+  - Losses include MSE, spectral norm, and time-derivative loss.
+- **Generation:**  
+  - Start from random noise and iteratively denoise using the trained model.
+  - Inverse MDCT to reconstruct audio waveform.
+- **Export:**  
+  - Generated samples are saved as `.wav` files for each genre.
+
+> For full code and training details, see [`diffusion_model/ddim_pytorch.ipynb`](./diffusion_model/ddim_pytorch.ipynb).
+
+#### ⚠️ Challenges:
+
+- **High computational requirements** for training and generation.
+- **Audio quality** is highly dependent on training duration and model tuning.
+- **Genre diversity:** Model performance may vary across genres.
+- Due to time constraints and limitation of the hardware performance, DDIM has only been trained on:
+  - `blues`
+  - `classical`
+
+>  Note: The decision to use DDIM could potentially bring significant improments to the project's objective. However, it requires a long training time and high computational capacity The **results** included in [`diffusion_model/generated`](./diffusion_model/generated) did not meet expectations due to the work of reduced training time and limited computaional resources. Nevertheless, it remains a promising model.
+
 ---
 
 ## 📚 References
@@ -180,6 +215,8 @@ Our system currently supports **hybrid music generation**. Users can select from
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [acids-ircam RAVE](https://github.com/acids-ircam/RAVE)
+- [Modified Discrete Cosine Transform (MDCT)](https://www.tensorflow.org/api_docs/python/tf/signal/mdct)
+- [Denoising Diffusion Implicit Models](https://keras.io/examples/generative/ddim/)
 
 ---
 

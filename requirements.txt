@@ -8,8 +8,10 @@ scipy
 librosa>=0.9.2
 tensorboard
 tqdm
+ffmpeg-python
 scikit_learn
 GPUtil>=1.4.0
 soundfile
 requests
 PyYAML>=6.0
+pydub
