@@ -44,7 +44,7 @@
   Modern, responsive UI for music selection, customization, and playback.
 
 - **Genre-based Music Generation:**  
-  (Coming soon) Generate new music tracks in the selected genre using AI.
+  Generate new music tracks in the selected genre using AI.
 
 - **Audio Player & Visualizer:**  
   Listen to generated or demo tracks with real-time visual feedback.
@@ -56,7 +56,7 @@
 
 ## 🖥️ Live Demo
 
-**Demo Video** [link](https://drive.google.com/file/d/1D_03y6fVvbKH3iRNa-dWK6zmQOpz_92D/view?usp=share_link)
+**Demo Video** [link](https://youtu.be/lpi_6QMFxQo)
 
 ---
 
