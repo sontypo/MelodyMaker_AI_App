@@ -133,14 +133,6 @@ document
         document.getElementById("welcome-screen").classList.add("active");
     });
 
-// document
-//     .getElementById("generate-button")
-//     .addEventListener("click", function () {
-//         document.getElementById("customize-screen").classList.remove("active");
-//         document.getElementById("player-screen").classList.add("active");
-//         animateProgressBar();
-//     });
-
 window.API_URL = "http://127.0.0.1:8000";
 
 document
@@ -162,8 +154,6 @@ document
             length: getSelectedOption("length-options"),
         };
 
-        // console.log("Selected options:", selectedOptions);
-
         // 檢查是否有選擇
         if (!selectedOptions.genre) {
             alert("請至少選擇一個音樂類型");
@@ -183,7 +173,7 @@ document
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(selectedOptions),
-                // mode: 'cors', // 確保 CORS
+                mode: "cors", // 確保 CORS
             });
 
             updateLoadingStatus("接收生成的音樂...");
@@ -197,9 +187,13 @@ document
 
             // 獲取生成的音頻
             const audioBlob = await response.blob();
+            console.log("音頻 Blob 大小:", audioBlob.size);
             const audioUrl = URL.createObjectURL(audioBlob);
 
             console.log("Audio generated successfully:", audioUrl);
+
+            // 隱藏載入畫面
+            hideLoadingScreen();
 
             // 跳轉到播放器頁面
             document
@@ -208,13 +202,18 @@ document
             document.getElementById("player-screen").classList.add("active");
 
             // 更新播放器
-            updatePlayerWithGeneratedMusic(audioUrl, selectedOptions);
+            setTimeout(() => {
+                updatePlayerWithGeneratedMusic(audioUrl, selectedOptions);
+            }, 100);
         } catch (error) {
             console.error("生成音樂失敗:", error);
-            alert("生成音樂失敗：" + error.message);
-        } finally {
-            // 隱藏載入畫面
             hideLoadingScreen();
+
+            // 保持在當前頁面，不要跳轉
+            alert(
+                "生成音樂失敗：" + error.message + "\n請查看控制台了解詳情。"
+            );
+        } finally {
         }
     });
 
@@ -569,7 +568,6 @@ function showLoadingScreen() {
         // 模擬進度更新
         setTimeout(() => updateLoadingStatus("分析您的音樂偏好..."), 1000);
         setTimeout(() => updateLoadingStatus("AI 正在創作旋律..."), 3000);
-        setTimeout(() => updateLoadingStatus("添加樂器編排..."), 5000);
         setTimeout(() => updateLoadingStatus("最後調整中..."), 7000);
     }
 }
@@ -938,37 +936,6 @@ function moveToCard(index) {
 
 // 添加用戶互動檢測
 let userInteracted = false;
-
-// // 監聽任何用戶互動
-// document.addEventListener("click", (e) => {
-//     // 檢查點擊的是否是導航按鈕
-//     const isNavigationButton =
-//         e.target.id === "start-button" ||
-//         e.target.closest("#start-button") ||
-//         e.target.id === "back-to-welcome" ||
-//         e.target.closest("#back-to-welcome") ||
-//         e.target.id === "generate-button" ||
-//         e.target.closest("#generate-button") ||
-//         e.target.id === "back-to-customize" ||
-//         e.target.closest("#back-to-customize");
-
-//     // 如果是導航按鈕，不要開始播放音樂
-//     if (isNavigationButton) {
-//         return;
-//     }
-
-//     if (!userInteracted) {
-//         userInteracted = true;
-//         // 如果有活動卡片且尚未播放，開始播放
-//         const activeCard = document.querySelector(".album-card.active");
-//         if (activeCard && !currentPlayingCard) {
-//             const audio = activeCard.querySelector(".album-audio");
-//             if (audio && audio.paused) {
-//                 playMusic(activeCard, audio);
-//             }
-//         }
-//     }
-// });
 
 // 修改 playMusic 函數以處理自動播放失敗
 function playMusic(card, audio) {
