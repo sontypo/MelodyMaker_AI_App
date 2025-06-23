@@ -56,7 +56,7 @@
 
 ## 🖥️ Live Demo
 
-**Demo Video**: [Youtube 🟥▶️](https://youtu.be/lpi_6QMFxQo)
+**Demo Video**: [Youtube](https://youtu.be/lpi_6QMFxQo)
 
 ---
 
