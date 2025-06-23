@@ -6,6 +6,8 @@
 
 > **Objective:** Modern music streaming services rely on efficient content creation and recommendation. This project seeks to develop a machine learning system that can **automatically generate music in user-selected genres**. By analyzing audio features, the system will ensure generated tracks fit genres such as classical, rock, pop, and more.
 
+![App Screenshot](app_screenshot.png)
+
 ---
 
 ## Table of Contents
@@ -228,7 +230,7 @@ Our system currently supports **hybrid music generation**. Users can select from
 ---
 
 ## 👥 Contributors
-This project was developed and carried out by a group of four students as the final project for the course 'Machine Learning in Engineering Science', under the guidance of [Professor Chi-Hua Yu](https://researchoutput.ncku.edu.tw/en/persons/chi-hua-yu).
+This project was developed and carried out by a group of four students as the final project for the course 'Machine Learning in Engineering Science', under the guidance of Professor [Chi-Hua Yu](https://researchoutput.ncku.edu.tw/en/persons/chi-hua-yu).
 
 - Hong-Son Nguyen (阮洪山) [✉](mailto:n16137037@gs.ncku.edu.tw)
 - Yu-Chen Ko (柯妤蓁) [✉](mailto:e14094154@gs.ncku.edu.tw)
