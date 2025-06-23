@@ -216,6 +216,34 @@ Our system currently supports **hybrid music generation**. Users can select from
 
 >  Note: The decision to use DDIM could potentially bring significant improments to the project's objective. However, it requires a long training time and high computational capacity The **results** included in [`diffusion_model/generated`](./diffusion_model/generated) did not meet expectations due to the work of reduced training time and limited computaional resources. Nevertheless, it remains a promising model.
 
+### 3. MEL-GAN (Mel-Spectrogram Generative Adversarial Network)
+
+**MEL-GAN** is a GAN-based model designed to generate mel-spectrograms conditioned on genre labels, which are then converted back to audio waveforms. This approach leverages adversarial training to produce more realistic and high-fidelity audio samples.
+
+#### 🛠️ MEL-GAN Pipeline:
+
+- **Preprocessing:**  
+  - Convert `.au` files to mel-spectrograms and save as `.npy` files for each genre.
+- **Model Architecture:**  
+  - **Generator:** Takes random noise and genre label as input, outputs a mel-spectrogram.
+  - **Discriminator:** Evaluates the authenticity of generated mel-spectrograms, conditioned on genre.
+- **Training:**  
+  - Adversarial training between Generator and Discriminator.
+  - Losses are tracked and visualized for both networks.
+- **Generation:**  
+  - Sample random noise and a genre label to generate a mel-spectrogram.
+  - Use `librosa.feature.inverse.mel_to_audio` to reconstruct the waveform from the generated mel-spectrogram.
+- **Export:**  
+  - Generated audio is saved as `.wav` files.
+
+> For full code and training details, see [`melgan_model/MEL-GAN.ipynb`](./melgan_model/MEL-GAN.ipynb).
+
+#### ⚠️ Challenges:
+
+- **GAN training instability:** Training GANs for audio can be unstable and may require careful tuning.
+- **Mel-to-audio inversion:** The quality of reconstructed audio depends on the effectiveness of the inversion process.
+- **Genre conditioning:** Ensuring the generator produces genre-consistent outputs is an ongoing challenge.
+
 ---
 
 ## 📚 References
