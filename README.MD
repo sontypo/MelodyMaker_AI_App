@@ -23,6 +23,9 @@
 - [Project Structure](#project-structure)
 - [How It Works](#how-it-works)
 - [Music Generation Model](#music-generation-model)
+  - [RAVE](#1.-rave)
+  - [DDIM](#2.-ddim)
+  - [MEL-GAN](#3.-mel-gan)
 - [References](#references)
 - [Contributors](#contributors)
 - [Notes](#notes)
@@ -31,7 +34,7 @@
 
 ## 📁 Dataset
 
-- **GTZAN Genre Collection**: [dataset](https://www.kaggle.com/datasets/carlthome/gtzan-genre-collection)
+- **GTZAN Genre Collection** - [*source*](https://www.kaggle.com/datasets/carlthome/gtzan-genre-collection)
   - 1,000 music clips (each 30 seconds)
   - 10 genres: `blues`, `classical`, `country`, `disco`, `hiphop`, `jazz`, `metal`, `pop`, `reggae`, `rock`
   - Used for both training and demo purposes
@@ -194,7 +197,7 @@ Our system currently supports **hybrid music generation**. Users can select from
 
 >  Note: The RAVE option may not always yield optimal results across all genres. Therefore, we provide an alternative generation method for improved quality.
 
-### 2. Denoising Diffusion Implicit Model (DDIM)
+### 2. DDIM (Denoising Diffusion Implicit Model)
 
 **Diffusion-based generative models** are a recent and powerful approach for raw audio synthesis. Our implementation leverages a U-Net architecture with self-attention and sinusoidal embeddings, trained to denoise [Modified Discrete Cosine Transform (MDCT)](https://www.tensorflow.org/api_docs/python/tf/signal/mdct) representations of audio.
 
