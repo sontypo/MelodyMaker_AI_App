@@ -22,7 +22,7 @@
   - [Run the Application](#run-the-application)
 - [Project Structure](#project-structure)
 - [How It Works](#how-it-works)
-- [Music Generation Model (Updating...)](#music-generation-model)
+- [Music Generation Model](#music-generation-model)
 - [References](#references)
 - [Contributors](#contributors)
 - [Notes](#notes)
@@ -31,7 +31,7 @@
 
 ## 📁 Dataset
 
-- **GTZAN Genre Collection**
+- **GTZAN Genre Collection**: [dataset](https://www.kaggle.com/datasets/carlthome/gtzan-genre-collection)
   - 1,000 music clips (each 30 seconds)
   - 10 genres: `blues`, `classical`, `country`, `disco`, `hiphop`, `jazz`, `metal`, `pop`, `reggae`, `rock`
   - Used for both training and demo purposes
@@ -122,14 +122,15 @@ MelodyMaker_AI_App/
 │   └── ...
 │
 ├── train_rave/             # RAVE model training scripts and configs
+├── rave_model/             # RAVE training code, functional scripts
+│   └── train.sh
+│
 ├── diffusion_model/        # Diffusion/DDIM model code, notebooks, and generated samples
-│   ├── ddim_pytorch.ipynb
-│   └── generated/
+│   └── ddim_pytorch.ipynb
 │
 ├── melgan_model/           # MEL-GAN model code and notebook
 │   └── MEL-GAN.ipynb
 │
-├── app_screenshot.png      # App screenshot for README
 └── README.MD 
 ```
 
@@ -157,12 +158,12 @@ MelodyMaker_AI_App/
 
 ---
 
-## 🧠 Music Generation Model (Updating...)
+## 🧠 Music Generation Models
 
-> **This section will be updated as the model is developed.**
+> **This section will be updated as the models is developed.**
 
-- The backend will integrate a machine learning model to generate music in the selected genre.
-- The model will analyze audio features and synthesize new tracks.
+- The backend will integrate the machine learning models to generate music in the selected genre.
+- The models will analyze audio features and synthesize new tracks.
 - More details and technical documentation will be added here.
 
 Our system currently supports **hybrid music generation**. Users can select from available techniques to generate genre-specific audio based on their needs or preferences.
@@ -259,7 +260,7 @@ Our system currently supports **hybrid music generation**. Users can select from
 
 ## 📚 References
 
-- [GTZAN Genre Collection Dataset](http://marsyas.info/downloads/datasets.html)
+- [GTZAN Genre Collection Dataset](https://www.kaggle.com/datasets/carlthome/gtzan-genre-collection)
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [acids-ircam RAVE](https://github.com/acids-ircam/RAVE)
